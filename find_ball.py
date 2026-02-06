@@ -13,15 +13,17 @@ import math
 from pyb import Servo
 
 # Color Tracking Thresholds (L Min, L Max, A Min, A Max, B Min, B Max)
-thresholds = [
+thresholds = {
+    "yellow": (44, 100, -16, 127, 20, 127), # yellow goal threshold
+    "blue": (0, 33, -28, -2, -1, -32), # blue goal threshold
+    "orange": (27, 73, 17, 127, 16, 127), # orange ball threshold
     # (30, 100, 15, 127, 15, 127),  # generic_red_thresholds
     # (30, 100, -64, -8, -32, 32),  # generic_green_thresholds
-    # (0, 15, 0, 40, -80, -20), # generic_blue_thresholds
-    (27, 73, 17, 127, 16, 127), # generic orange
-]
+}
 
 ball_box = None
 ball_center = None
+goal_color = None
 
 # Servo setup
 pan_servo = Servo(1) # P7
@@ -55,13 +57,46 @@ while True:
     # Image Center
     img_center = (img.width() // 2, img.height() // 2)
 
-    MAX_ELONGATION = 0.5
-    for blob in img.find_blobs(thresholds, pixels_threshold=200, area_threshold=200):
+    orange = thresholds.get("orange")
+    yellow = thresholds.get("yellow")
+    blue = thresholds.get("blue")
+
+    MAX_BALL_ELONGATION = 0.5
+    for blob in img.find_blobs([orange], pixels_threshold=200, area_threshold=200):
         # These values depend on the blob not being circular - otherwise they will be shaky.
-        if blob.elongation() < MAX_ELONGATION:
+        if blob.elongation() < MAX_BALL_ELONGATION:
             ball_box = blob.rect()
             ball_center = (blob.cx(), blob.cy())
-            img.draw_rectangle(ball_box)
+            img.draw_rectangle(ball_box, color=(255, 165, 0))
+            # img.draw_edges(blob.min_corners(), color=(255, 0, 0))
+            # img.draw_line(blob.major_axis_line(), color=(0, 255, 0))
+            # img.draw_line(blob.minor_axis_line(), color=(0, 0, 255))
+        # These values are stable all the time.
+        img.draw_cross(blob.cx(), blob.cy())
+        # Note - the blob rotation is unique to 0-180 only.
+        """
+        img.draw_keypoints(
+            [(blob.cx(), blob.cy(), int(math.degrees(blob.rotation())))], size=20
+        )
+        """
+    yellow_blobs = img.find_blobs([yellow], pixels_threshold=200, area_threshold=200)
+    blue_blobs = img.find_blobs([blue], pixels_threshold=200, area_threshold=200)
+    if yellow_blobs:
+        goal_color = "yellow"
+        outline = (255, 255, 0)
+        blobs = yellow_blobs
+    else:
+        goal_color = "blue"
+        outline = (0, 255, 255)
+        blobs = blue_blobs
+
+    for blob in blobs:
+        # These values depend on the blob not being circular - otherwise they will be shaky.
+        if blob.elongation() > MAX_BALL_ELONGATION:
+            goal_box = blob.rect()
+            goal_box = (blob.cx(), blob.cy())
+            print(goal_box)
+            img.draw_rectangle(goal_box, color=(0, 255, 255))
             # img.draw_edges(blob.min_corners(), color=(255, 0, 0))
             # img.draw_line(blob.major_axis_line(), color=(0, 255, 0))
             # img.draw_line(blob.minor_axis_line(), color=(0, 0, 255))
@@ -96,17 +131,17 @@ while True:
         x_diff = ball_center[0] - img_center[0]
         y_diff = ball_center[1] - img_center[1]
 
-    if abs(x_diff) > 80:
-        if x_diff > 0:
-            pan_angle += x_diff * 0.04
-        if x_diff < 0:
-            pan_angle += x_diff * 0.04
+        if abs(x_diff) > 80:
+            if x_diff > 0:
+                pan_angle += x_diff * 0.04
+            if x_diff < 0:
+                pan_angle += x_diff * 0.04
 
-    if abs(y_diff) > 20:
-        if y_diff > 0:
-            tilt_angle += y_diff * 0.04
-        if y_diff < 0:
-            tilt_angle += y_diff * 0.04
+        if abs(y_diff) > 20:
+            if y_diff > 0:
+                tilt_angle += y_diff * 0.04
+            if y_diff < 0:
+                tilt_angle += y_diff * 0.04
 
     print(pan_angle)
     pan_angle = max(-90, min(90, pan_angle))

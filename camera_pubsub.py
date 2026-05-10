@@ -1,0 +1,191 @@
+# Camera "publisher/subscriber" - By: soccerpi2 - Fri Mar 6 2026
+
+import sensor
+import image
+import time
+import math
+import pyb
+
+clock = time.clock()
+
+# Color Tracking Thresholds (L Min, L Max, A Min, A Max, B Min, B Max)
+thresholds = {
+    "yellow": (44, 100, -16, 127, 20, 127), # yellow goal threshold
+    "blue": (0, 33, -28, -2, -1, -32), # blue goal threshold
+    "orange": (27, 73, 17, 127, 16, 127), # orange ball threshold
+}
+
+orange = thresholds.get("orange")
+yellow = thresholds.get("yellow")
+blue = thresholds.get("blue")
+
+ball_box = None
+ball_center = None
+
+sensor.reset() # Reset and initialize the sensor.
+sensor.set_pixformat(sensor.RGB565) # Set pixel format to RGB565 (or GRAYSCALE)
+sensor.set_framesize(sensor.QVGA) # Set frame size to QVGA (320x240)
+sensor.skip_frames(time=2000) # Wait for settings take effect
+sensor.set_auto_exposure(False, exposure_us=13500)
+sensor.set_auto_gain(False)  # must be turned off for color tracking
+sensor.set_auto_whitebal(False)  # must be turned off for color tracking
+sensor.set_saturation(3)
+sensor.set_brightness(2)
+
+# LEDs
+r = pyb.LED(1)
+g = pyb.LED(2)
+b = pyb.LED(3)
+
+"""
+def establish_goal(img):
+    yellow_blobs = img.find_blobs([yellow], pixels_threshold=200, area_threshold=200)
+    blue_blobs = img.find_blobs([blue], pixels_threshold=200, area_threshold=200)
+
+    if yellow_blobs:
+        goal_color = 'yellow'
+    if blue_blobs:
+        goal_color = 'blue'
+
+    return goal_color
+"""
+
+def search_ball(img):
+    MAX_BALL_ELONGATION = 0.5
+
+    max_blob = None
+
+    for blob in img.find_blobs([orange], pixels_threshold=200, area_threshold=200):
+        if blob.elongation() < MAX_BALL_ELONGATION:
+            if max_blob == None or blob.area() > max_blob.area():
+                max_blob = blob
+
+    if max_blob == None:
+        print('SPIN')
+        r.off()
+        g.on()
+        b.off()
+
+    else:
+        ball_box = max_blob.rect()
+        # ball_center = (blob.cx(), blob.cy())
+        img.draw_rectangle(ball_box, color=(255, 165, 0))
+
+        img.draw_cross(blob.cx(), blob.cy())
+        # Note - the blob rotation is unique to 0-180 only.
+        """
+        img.draw_keypoints(
+            [(blob.cx(), blob.cy(), int(math.degrees(blob.rotation())))], size=20
+        )
+        """
+        r.on()
+        g.off()
+        b.on()
+
+def search_goal(img):
+    MAX_GOAL_ELONGATION = 0.5
+
+    global goal_color
+    if goal_color == 'yellow':
+        outline = (255, 255, 0)
+        blobs = img.find_blobs([yellow], pixels_threshold=200, area_threshold=200)
+
+    elif goal_color == 'blue':
+        outline = (0, 255, 0)
+        blobs = img.find_blobs([blue], pixels_threshold=200, area_threshold=200)
+
+    max_blob = None
+
+    for blob in blobs:
+        if blob.elongation() > MAX_GOAL_ELONGATION:
+            if max_blob == None or blob.area() > max_blob.area():
+                max_blob = blob
+
+    if max_blob == None:
+        print('SPIN')
+        r.off()
+        g.on()
+        b.off()
+
+
+    else:
+        goal_box = max_blob.rect()
+        # goal_box_center = (blob.cx(), blob.cy())
+        print(goal_box)
+        img.draw_rectangle(goal_box, color=outline)
+        img.draw_cross(blob.cx(), blob.cy())
+        # Note - the blob rotation is unique to 0-180 only.
+        """
+        img.draw_keypoints(
+            [(blob.cx(), blob.cy(), int(math.degrees(blob.rotation())))], size=20
+        )
+        """
+        r.on()
+        g.off()
+        b.on()
+
+
+usb = pyb.USB_VCP()
+buffer = ""
+
+while True:
+
+    clock.tick()
+
+    if usb.any():
+        data = usb.read().decode()
+        buffer += data
+
+        if "\n" in buffer:
+            msg, buffer = buffer.split("\n", 1)
+            msg = msg.strip()
+
+            print("Received:", msg)
+
+            if msg == "SEARCH_BALL":
+                print("Starting search")
+    time.sleep_ms(10)
+
+    # check if data is available
+    """
+    print('outside')
+    if usb.isconnected():
+        print('inside')
+        img = sensor.snapshot()
+        # goal_color = establish_goal(img)
+
+
+        # Image Center
+        img_center = (img.width() // 2, img.height() // 2)
+
+        #if True:
+        stage = usb.readline()
+        print(stage)
+        #stage = 'SEARCH_BALL'
+        if stage == 'SEARCH_BALL':
+            # print('searching for ball')
+            # change LED color to red
+            r.on()
+            g.off()
+            b.off()
+            search_ball(img)
+
+        elif stage == 'APPROACH_BALL':
+            print('going to ball')
+
+        elif stage == 'CAPTURE':
+            print('capturing ball')
+
+        elif stage == 'SEARCH_GOAL':
+            print('searching for goal')
+            search_goal(img)
+
+        elif stage == 'APPROACH_GOAL':
+            print('lining up to shoot')
+
+        elif stage == 'SHOOT':
+            print('shooting!')
+        else:
+            continue
+    """
+

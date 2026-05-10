@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating teensy2_pkg.egg-info
+writing teensy2_pkg.egg-info/PKG-INFO
+writing dependency_links to teensy2_pkg.egg-info/dependency_links.txt
+writing entry points to teensy2_pkg.egg-info/entry_points.txt
+writing requirements to teensy2_pkg.egg-info/requires.txt
+writing top-level names to teensy2_pkg.egg-info/top_level.txt
+writing manifest file 'teensy2_pkg.egg-info/SOURCES.txt'
+reading manifest file 'teensy2_pkg.egg-info/SOURCES.txt'
+writing manifest file 'teensy2_pkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /root/soccer_ws/install/teensy2_pkg/lib/python3.10/site-packages/teensy2-pkg.egg-link (link to .)
+Installing strategist script to /root/soccer_ws/install/teensy2_pkg/lib/teensy2_pkg
+Installing teensy2_bridge_node script to /root/soccer_ws/install/teensy2_pkg/lib/teensy2_pkg
+
+Installed /root/soccer_ws/build/teensy2_pkg
+running symlink_data
+creating /root/soccer_ws/install/teensy2_pkg/share/ament_index
+creating /root/soccer_ws/install/teensy2_pkg/share/ament_index/resource_index
+creating /root/soccer_ws/install/teensy2_pkg/share/ament_index/resource_index/packages
+symbolically linking /root/soccer_ws/build/teensy2_pkg/resource/teensy2_pkg -> /root/soccer_ws/install/teensy2_pkg/share/ament_index/resource_index/packages
+symbolically linking /root/soccer_ws/build/teensy2_pkg/package.xml -> /root/soccer_ws/install/teensy2_pkg/share/teensy2_pkg

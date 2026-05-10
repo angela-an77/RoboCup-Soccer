@@ -1,0 +1,17 @@
+LICENSE
+package.xml
+setup.cfg
+setup.py
+../../build/teensy1_pkg/teensy1_pkg.egg-info/PKG-INFO
+../../build/teensy1_pkg/teensy1_pkg.egg-info/SOURCES.txt
+../../build/teensy1_pkg/teensy1_pkg.egg-info/dependency_links.txt
+../../build/teensy1_pkg/teensy1_pkg.egg-info/entry_points.txt
+../../build/teensy1_pkg/teensy1_pkg.egg-info/requires.txt
+../../build/teensy1_pkg/teensy1_pkg.egg-info/top_level.txt
+../../build/teensy1_pkg/teensy1_pkg.egg-info/zip-safe
+resource/teensy1_pkg
+teensy1_pkg/__init__.py
+teensy1_pkg/teensy1_bridge.py
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

@@ -1,0 +1,26 @@
+[1.521s] Invoking command in '/root/soccer_ws/build/strategy_pkg': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/soccer_ws/build/strategy_pkg/build --no-deps symlink_data
+[1.842s] running develop
+[1.951s] running egg_info
+[1.951s] creating strategy_pkg.egg-info
+[1.951s] writing strategy_pkg.egg-info/PKG-INFO
+[1.952s] writing dependency_links to strategy_pkg.egg-info/dependency_links.txt
+[1.952s] writing entry points to strategy_pkg.egg-info/entry_points.txt
+[1.953s] writing requirements to strategy_pkg.egg-info/requires.txt
+[1.953s] writing top-level names to strategy_pkg.egg-info/top_level.txt
+[1.954s] writing manifest file 'strategy_pkg.egg-info/SOURCES.txt'
+[1.958s] reading manifest file 'strategy_pkg.egg-info/SOURCES.txt'
+[1.961s] writing manifest file 'strategy_pkg.egg-info/SOURCES.txt'
+[1.961s] running build_ext
+[1.962s] Creating /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy-pkg.egg-link (link to .)
+[1.965s] Installing camera_bridge_node script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[1.965s] Installing strategist script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[1.967s] Installing teensy1_bridge_node script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[1.969s] 
+[1.970s] Installed /root/soccer_ws/build/strategy_pkg
+[1.970s] running symlink_data
+[1.970s] creating /root/soccer_ws/install/strategy_pkg/share/ament_index
+[1.970s] creating /root/soccer_ws/install/strategy_pkg/share/ament_index/resource_index
+[1.970s] creating /root/soccer_ws/install/strategy_pkg/share/ament_index/resource_index/packages
+[1.970s] symbolically linking /root/soccer_ws/build/strategy_pkg/resource/strategy_pkg -> /root/soccer_ws/install/strategy_pkg/share/ament_index/resource_index/packages
+[1.971s] symbolically linking /root/soccer_ws/build/strategy_pkg/package.xml -> /root/soccer_ws/install/strategy_pkg/share/strategy_pkg
+[2.101s] Invoked command in '/root/soccer_ws/build/strategy_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/soccer_ws/build/strategy_pkg/build --no-deps symlink_data

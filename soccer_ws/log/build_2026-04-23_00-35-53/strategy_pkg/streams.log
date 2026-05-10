@@ -1,0 +1,39 @@
+[1.721s] Invoking command in '/root/soccer_ws/build/strategy_pkg': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/soccer_ws/build/strategy_pkg/build
+[2.091s] running develop
+[2.216s] Removing /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy-pkg.egg-link (link to .)
+[2.335s] Invoked command in '/root/soccer_ws/build/strategy_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/soccer_ws/build/strategy_pkg/build
+[2.337s] Invoking command in '/root/soccer_ws/src/strategy_pkg': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/strategy_pkg build --build-base /root/soccer_ws/build/strategy_pkg/build install --record /root/soccer_ws/build/strategy_pkg/install.log --single-version-externally-managed install_data --force
+[2.716s] running egg_info
+[2.717s] writing ../../build/strategy_pkg/strategy_pkg.egg-info/PKG-INFO
+[2.717s] writing dependency_links to ../../build/strategy_pkg/strategy_pkg.egg-info/dependency_links.txt
+[2.717s] writing entry points to ../../build/strategy_pkg/strategy_pkg.egg-info/entry_points.txt
+[2.717s] writing requirements to ../../build/strategy_pkg/strategy_pkg.egg-info/requires.txt
+[2.717s] writing top-level names to ../../build/strategy_pkg/strategy_pkg.egg-info/top_level.txt
+[2.720s] reading manifest file '../../build/strategy_pkg/strategy_pkg.egg-info/SOURCES.txt'
+[2.722s] adding license file 'LICENSE'
+[2.722s] writing manifest file '../../build/strategy_pkg/strategy_pkg.egg-info/SOURCES.txt'
+[2.722s] running build
+[2.723s] running build_py
+[2.723s] creating /root/soccer_ws/build/strategy_pkg/build
+[2.723s] creating /root/soccer_ws/build/strategy_pkg/build/lib
+[2.723s] creating /root/soccer_ws/build/strategy_pkg/build/lib/strategy_pkg
+[2.723s] copying strategy_pkg/__init__.py -> /root/soccer_ws/build/strategy_pkg/build/lib/strategy_pkg
+[2.723s] copying strategy_pkg/strategist.py -> /root/soccer_ws/build/strategy_pkg/build/lib/strategy_pkg
+[2.723s] running install
+[2.724s] running install_lib
+[2.727s] creating /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg
+[2.727s] copying /root/soccer_ws/build/strategy_pkg/build/lib/strategy_pkg/__init__.py -> /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg
+[2.728s] copying /root/soccer_ws/build/strategy_pkg/build/lib/strategy_pkg/strategist.py -> /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg
+[2.728s] byte-compiling /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg/__init__.py to __init__.cpython-310.pyc
+[2.728s] byte-compiling /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg/strategist.py to strategist.cpython-310.pyc
+[2.729s] running install_data
+[2.730s] copying resource/strategy_pkg -> /root/soccer_ws/install/strategy_pkg/share/ament_index/resource_index/packages
+[2.731s] copying package.xml -> /root/soccer_ws/install/strategy_pkg/share/strategy_pkg
+[2.731s] running install_egg_info
+[2.738s] Copying ../../build/strategy_pkg/strategy_pkg.egg-info to /root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages/strategy_pkg-0.0.0-py3.10.egg-info
+[2.739s] running install_scripts
+[2.788s] Installing camera_bridge_node script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[2.791s] Installing strategist script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[2.791s] Installing teensy1_bridge_node script to /root/soccer_ws/install/strategy_pkg/lib/strategy_pkg
+[2.791s] writing list of installed files to '/root/soccer_ws/build/strategy_pkg/install.log'
+[2.895s] Invoked command in '/root/soccer_ws/src/strategy_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/strategy_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/strategy_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/strategy_pkg build --build-base /root/soccer_ws/build/strategy_pkg/build install --record /root/soccer_ws/build/strategy_pkg/install.log --single-version-externally-managed install_data --force

@@ -1,0 +1,38 @@
+[1.731s] Invoking command in '/root/soccer_ws/build/vision_pkg': PYTHONPATH=/root/soccer_ws/build/vision_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/soccer_ws/build/vision_pkg/build
+[2.064s] running develop
+[2.184s] Removing /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision-pkg.egg-link (link to .)
+[2.299s] Invoked command in '/root/soccer_ws/build/vision_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/vision_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /root/soccer_ws/build/vision_pkg/build
+[2.303s] Invoking command in '/root/soccer_ws/src/vision_pkg': PYTHONPATH=/root/soccer_ws/build/vision_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /root/soccer_ws/build/vision_pkg/build install --record /root/soccer_ws/build/vision_pkg/install.log --single-version-externally-managed install_data --force
+[2.677s] running egg_info
+[2.679s] writing ../../build/vision_pkg/vision_pkg.egg-info/PKG-INFO
+[2.680s] writing dependency_links to ../../build/vision_pkg/vision_pkg.egg-info/dependency_links.txt
+[2.680s] writing entry points to ../../build/vision_pkg/vision_pkg.egg-info/entry_points.txt
+[2.681s] writing requirements to ../../build/vision_pkg/vision_pkg.egg-info/requires.txt
+[2.682s] writing top-level names to ../../build/vision_pkg/vision_pkg.egg-info/top_level.txt
+[2.687s] reading manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'
+[2.688s] adding license file 'LICENSE'
+[2.688s] writing manifest file '../../build/vision_pkg/vision_pkg.egg-info/SOURCES.txt'
+[2.689s] running build
+[2.689s] running build_py
+[2.690s] creating /root/soccer_ws/build/vision_pkg/build
+[2.691s] creating /root/soccer_ws/build/vision_pkg/build/lib
+[2.692s] creating /root/soccer_ws/build/vision_pkg/build/lib/vision_pkg
+[2.692s] copying vision_pkg/__init__.py -> /root/soccer_ws/build/vision_pkg/build/lib/vision_pkg
+[2.692s] copying vision_pkg/camera_bridge.py -> /root/soccer_ws/build/vision_pkg/build/lib/vision_pkg
+[2.695s] running install
+[2.695s] running install_lib
+[2.698s] creating /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg
+[2.699s] copying /root/soccer_ws/build/vision_pkg/build/lib/vision_pkg/__init__.py -> /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg
+[2.700s] copying /root/soccer_ws/build/vision_pkg/build/lib/vision_pkg/camera_bridge.py -> /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg
+[2.701s] byte-compiling /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg/__init__.py to __init__.cpython-310.pyc
+[2.702s] byte-compiling /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg/camera_bridge.py to camera_bridge.cpython-310.pyc
+[2.704s] running install_data
+[2.705s] copying resource/vision_pkg -> /root/soccer_ws/install/vision_pkg/share/ament_index/resource_index/packages
+[2.705s] copying package.xml -> /root/soccer_ws/install/vision_pkg/share/vision_pkg
+[2.707s] running install_egg_info
+[2.715s] Copying ../../build/vision_pkg/vision_pkg.egg-info to /root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages/vision_pkg-0.0.0-py3.10.egg-info
+[2.721s] running install_scripts
+[2.761s] Installing camera_bridge_node script to /root/soccer_ws/install/vision_pkg/lib/vision_pkg
+[2.763s] Installing strategist script to /root/soccer_ws/install/vision_pkg/lib/vision_pkg
+[2.765s] writing list of installed files to '/root/soccer_ws/build/vision_pkg/install.log'
+[2.878s] Invoked command in '/root/soccer_ws/src/vision_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/vision_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/vision_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_pkg build --build-base /root/soccer_ws/build/vision_pkg/build install --record /root/soccer_ws/build/vision_pkg/install.log --single-version-externally-managed install_data --force

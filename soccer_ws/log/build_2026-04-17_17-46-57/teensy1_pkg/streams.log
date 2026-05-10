@@ -1,0 +1,25 @@
+[1.483s] Invoking command in '/root/soccer_ws/build/teensy1_pkg': PYTHONPATH=/root/soccer_ws/build/teensy1_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/teensy1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/soccer_ws/build/teensy1_pkg/build --no-deps symlink_data
+[1.830s] running develop
+[1.940s] running egg_info
+[1.942s] creating teensy1_pkg.egg-info
+[1.943s] writing teensy1_pkg.egg-info/PKG-INFO
+[1.944s] writing dependency_links to teensy1_pkg.egg-info/dependency_links.txt
+[1.944s] writing entry points to teensy1_pkg.egg-info/entry_points.txt
+[1.945s] writing requirements to teensy1_pkg.egg-info/requires.txt
+[1.945s] writing top-level names to teensy1_pkg.egg-info/top_level.txt
+[1.946s] writing manifest file 'teensy1_pkg.egg-info/SOURCES.txt'
+[1.951s] reading manifest file 'teensy1_pkg.egg-info/SOURCES.txt'
+[1.954s] writing manifest file 'teensy1_pkg.egg-info/SOURCES.txt'
+[1.963s] running build_ext
+[1.964s] Creating /root/soccer_ws/install/teensy1_pkg/lib/python3.10/site-packages/teensy1-pkg.egg-link (link to .)
+[1.968s] Installing strategist script to /root/soccer_ws/install/teensy1_pkg/lib/teensy1_pkg
+[1.969s] Installing teensy1_bridge_node script to /root/soccer_ws/install/teensy1_pkg/lib/teensy1_pkg
+[1.970s] 
+[1.971s] Installed /root/soccer_ws/build/teensy1_pkg
+[1.971s] running symlink_data
+[1.972s] creating /root/soccer_ws/install/teensy1_pkg/share/ament_index
+[1.972s] creating /root/soccer_ws/install/teensy1_pkg/share/ament_index/resource_index
+[1.973s] creating /root/soccer_ws/install/teensy1_pkg/share/ament_index/resource_index/packages
+[1.973s] symbolically linking /root/soccer_ws/build/teensy1_pkg/resource/teensy1_pkg -> /root/soccer_ws/install/teensy1_pkg/share/ament_index/resource_index/packages
+[1.974s] symbolically linking /root/soccer_ws/build/teensy1_pkg/package.xml -> /root/soccer_ws/install/teensy1_pkg/share/teensy1_pkg
+[2.105s] Invoked command in '/root/soccer_ws/build/teensy1_pkg' returned '0': PYTHONPATH=/root/soccer_ws/build/teensy1_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/soccer_ws/install/teensy1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/soccer_ws/build/teensy1_pkg/build --no-deps symlink_data

@@ -3,4 +3,4 @@ Mobility consists of the scripts uploaded to each Teensy. We have one teensy con
 
 Vision consists of the main code that is saved to the OpenMV camera.
 
-Our Raspberry Pi 5 controls our components and strategizes using ROS, and soccer_ws consists of the workspace that has all of our nodes.
+Our Raspberry Pi 5 controls our components and strategizes using ROS, and soccer_ws consists of the workspace that has all of our nodes. Nodes are run in a docker container that has usb port access to our teensys and camera.

@@ -1,5 +1,0 @@
-[console_scripts]
-camera_bridge_node = vision_pkg.camera_bridge:main
-strategist = strategy_pkg.strategist:main
-teensy1_bridge_node = teensy1_pkg.teensy1_bridge:main
-

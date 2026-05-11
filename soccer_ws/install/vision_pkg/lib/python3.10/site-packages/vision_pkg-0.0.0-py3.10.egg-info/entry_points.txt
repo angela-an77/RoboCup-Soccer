@@ -1,4 +1,0 @@
-[console_scripts]
-camera_bridge_node = vision_pkg.camera_bridge:main
-strategist = strategy_pkg.strategist:main
-

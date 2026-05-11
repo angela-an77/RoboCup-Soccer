@@ -1,4 +1,0 @@
-[console_scripts]
-strategist = strategy_pkg.strategist:main
-teensy2_bridge_node = teensy2_pkg.teensy2_bridge:main
-

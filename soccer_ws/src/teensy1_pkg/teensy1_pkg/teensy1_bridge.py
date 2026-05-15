@@ -25,17 +25,17 @@ class Teensy1Bridge(Node):
         # Send command to Teensy 1
         self.sercon.write((command + '\n').encode())
     
-    # sending possession status
-    def send_serdata(self):
-        if self.sercon.in_waiting:
-            data = self.sercon.readline().decode()
-            #self.buffer += data
+    # # sending possession status
+    # def send_serdata(self):
+    #     if self.sercon.in_waiting:
+    #         data = self.sercon.readline().decode()
+    #         #self.buffer += data
 
-            irbb_msg = String()
-            irbb_msg.data = data
+    #         irbb_msg = String()
+    #         irbb_msg.data = data
 
-            self.pub.publish(irbb_msg)
-            self.get_logger().info(f"Received: {irbb_msg.data}")
+    #         self.pub.publish(irbb_msg)
+    #         self.get_logger().info(f"Received: {irbb_msg.data}")
 
 
 

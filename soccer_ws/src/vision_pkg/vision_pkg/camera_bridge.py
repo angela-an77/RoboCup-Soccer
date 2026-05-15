@@ -26,24 +26,23 @@ class CameraBridge(Node):
     def send_stage(self, msg):
         stage = msg.data
 
-        if stage != self.last_stage:
-            # Send command to camera
-            self.sercon.write((stage + '\n').encode())
-            self.get_logger().info(f'Sending to OpenMV: {stage}')
-            self.last_stage = stage
+        #if stage != self.last_stage:
+        # Send command to camera
+        self.sercon.write((stage + '\n').encode())
+        self.get_logger().info(f'Sending to OpenMV: {stage}')
+        self.last_stage = stage
     
     def send_serdata(self):
         latest = None
         while self.sercon.in_waiting:
-            latest = self.sercon.readline().decode().strip()
-            # print(data)
+            line = self.sercon.readline().decode().strip()
+            if line and "|" in line:
+                # print(data)
+                cam_msg = String()
+                cam_msg.data = line
+                self.pub.publish(cam_msg)
 
-        if latest and "|" in latest:
-            cam_msg = String()
-            cam_msg.data = latest
-            self.pub.publish(cam_msg)
-
-            self.get_logger().info(f"Received: {cam_msg.data}")
+                self.get_logger().info(f"Received: {cam_msg.data}")
 
 
 
